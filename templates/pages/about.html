@@ -1,0 +1,57 @@
+{% extends 'base.html'%}
+<title>{% block title %}About E-physioneeds{% endblock %}</title>
+{% load static %}
+{% block content %}
+<section>
+    <div>
+      <img src="{% static 'img/slider7.png'%}" alt="">
+    </div>
+  </section>
+<section class="container my-5" style="color: rgb(0, 153, 255);">
+    <div class="text-center">
+        
+    </div>
+    <div style="font-size: 15px;">
+       <i> <p>E-Physioneeds is a venture of Physioneeds academy and Pain free zone serving since 2009.
+            We aim to give the highest quality of skilled programmes in the most simplified manner with
+            International standards and CPD points. The founders E-Physioneeds academy are Dr.
+            Chakshu who is a renowned physiotherapist, an author, a teacher and an enterpreneur and Dr.
+            Krishna N. Sharma who is Vice Chancellor, an author and multi talented personality. 
+            The team of E-Physioneeds has great personalities who are expert and ultimate in their field.
+            Years of hard and smart work has been executed to make the most comprehensive courses for
+            your utmost understanding with the most detailed clinical anatomy and biomechanics that
+            too, Imagine what!</p>
+            <p>With the hand illustrations!</p>
+            <p>Yes, you will be taken through the whole program with full online support.</p>
+            <p>We are just a mail or chat away!</p>   
+            <p>We always deliver more than expected!!!
+        </p></i>
+    </div>
+</section>
+<section class="py-1" style="background: whitesmoke;">
+    <div class="container">
+        <div class="text-center">
+            <div style="margin-top:70px"><span style="height:10px; width:10px; background:linear-gradient(to right,cyan,#30bee2); border-radius: 50%; display: inline-block; margin: 3px;"></span><span style="height:10px; width:10px; background:linear-gradient(to right,cyan,#30bee2); border-radius: 50%; display: inline-block; margin:3px; margin-left: 5px;"></span><spen style="margin:0 20px; letter-spacing: 10px;">LEARN FROM THE BEST</spen><span style="height:10px; width:10px; background:linear-gradient(to right,cyan,#30bee2); border-radius: 50%; display: inline-block; margin: 3px;"></span>
+                <span style="height:10px; width:10px; background:linear-gradient(to right,cyan,#30bee2); border-radius: 50%; display: inline-block; margin:3px;"></span></div>
+            <p style="font-size: 30px; color:#30bee2;"><i>Our <b>Experts</b></i> </p>
+        </div>
+        <div class="row my-5">
+            {% for member in team%}
+            <div class="col-md-6 my-4">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="{{member.image.url}}" alt="" style="border-radius: 50%;">
+                    </div>
+                    <div class="col-md-6 text-center my-4">
+                        <h5 class="my-4">{{member.name}}</h5>
+                        <p>{{member.qualification}}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

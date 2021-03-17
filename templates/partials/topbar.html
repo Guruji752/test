@@ -1,0 +1,19 @@
+<section id="top-bar" class="" style="background: linear-gradient(to right,#30bee2,#2cacb8,#52dad3);">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4" style="float: left; color:white">
+          <p class="my-2"><i class="fas fa-phone my-2" ></i> (+91) 8800220066</p>
+        </div>
+        <div class="col-md-4" style="float: left; color:white">
+          <p class="my-2"><i class="fas fa-envelope-open"></i> info@e-physioneeds.com</p>
+        </div>
+        <div class="col-md-4" style="float: left; color:white; text-decoration: none;">
+          {% if user.is_authenticated %}
+          <p class="my-2" style="float: left; color:white; text-decoration: none;"><a>|&nbsp;&nbsp;&nbsp;&nbsp;Webinar&nbsp;&nbsp;&nbsp;&nbsp;</a>|<a href="{% url 'cart_detail'%}" style="color:white; text-decoration: none;">&nbsp;&nbsp;&nbsp;&nbsp;Cart&nbsp;&nbsp;&nbsp;&nbsp;</a>|<a href="{% url 'dashboard' %}" style="color:white; text-decoration: none;">&nbsp;&nbsp;&nbsp;&nbsp;{{user.username}}&nbsp;&nbsp;&nbsp;&nbsp;</a>|<a href="{% url 'logout'%}" style="color:white; text-decoration: none;">&nbsp;&nbsp;&nbsp;&nbsp;logout&nbsp;&nbsp;&nbsp;&nbsp;</a> </p>
+        {% else %}
+        <p class="my-2"><a>|&nbsp;&nbsp;&nbsp;&nbsp;Webinar&nbsp;&nbsp;&nbsp;&nbsp;</a>|<a href="{% url 'login'%}" style="color:white; text-decoration: none;">&nbsp;&nbsp;&nbsp;&nbsp;login&nbsp;&nbsp;&nbsp;&nbsp;</a>|<a href="{% url 'register'%}" style="color:white; text-decoration: none;">&nbsp;&nbsp;&nbsp;&nbsp;Signup&nbsp;&nbsp;&nbsp;&nbsp;</a> </p>
+      {% endif %}  
+      </div>
+      </div>
+    </div>
+</section>

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{%block title %}{{post.title_teg}} {%endblock%}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-3 profile">
+            <aside>
+                <img src="{{post.image.url}}" alt="Blog Main image" class="image-circle">
+                <h3>{{post.title}}</h3>
+                <small>BY : {{post.author}}</small>
+                <small>at : {{post.publish}}</small>
+
+            </aside>
+        </div>
+        <div class="col-md-8">
+            <article>
+                <header>{{post.title}}</header>
+                <div class="lead">
+                    {{post.body|safe}}
+                </div>
+            </article>
+        </div>
+    </div>
+
+</div>
+<br>
+<div class="container py-3">
+
+{% comment %}
+<a href="{% url 'bloghome' %}" class="btn btn-secondary">Update</a>
+<a href="{% url 'update_post' post.id %}" class="btn btn-secondary">Update</a>
+<a href="{% url 'delete_post' post.id %}" class="btn btn-secondary">Delete</a>
+{% endcomment %}
+</div>
+{% endblock %}

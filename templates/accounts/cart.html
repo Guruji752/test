@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block content %}
+<section id="showcase-inner" class="py-5 text-white">
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-md-12">
+        <h1 class="display-4">Cart</h1>
+        <p class="lead">Manage your Cart</p>
+      </div>
+    </div>
+  </div>
+</section>
+{% include 'partials/_alert.html' %}
+<section id="dashboard" class="py-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Welcome {{ user.first_name }}</h2>
+        {% if contacts %}
+        <p>Here are the Courses</p>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Courses</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for contact in contacts %}
+            <tr>
+              <td>{{ contact.id }}</td>
+              <td>{{ contact.course }}</td>
+              <td>
+                <a class="btn btn-light" href="#">View Courses</a>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        {% else %}
+        <p>no contacts </p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

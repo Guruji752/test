@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{%block title %}Create A New Blog{%endblock%}
+{% block content %}
+<br>
+<h1>Add New Post</h1>
+<div class="form-group container">
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form.media}}
+    {{form.as_p}}
+    <button class="btn btn-success">Post</button>
+</form>
+</div>
+
+
+{% endblock %}

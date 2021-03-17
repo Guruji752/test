@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{%load static %}
+{% block content %}
+<section>
+  <div>
+    <img src="{% static 'img/slider5.png'%}" alt="">
+  </div>
+</section>
+<section>
+  {% comment %}
+  <div class="conatiner text-justify-right">
+    {% if user.is_authenticated %}
+    <a href="{% url 'addpost'%}" class="btn btn-secondary">Create a Post</a>
+    {% else %}
+    <a href="{% url 'blog_registration'%}" class="btn btn-secondary">New User</a>
+    <a href="{% url 'login'%}" class="btn btn-secondary">Have an account</a>
+    {% endif %}
+  </div>
+  {% endcomment %}
+</section>
+<section id="listings" class="py-5">
+  <div class="container">
+    <div class="text-center"><span style="height:10px; width:10px; background:linear-gradient(to right,cyan,#30bee2); border-radius: 50%; display: inline-block; margin: 3px;"></span><span style="height:10px; width:10px; background:linear-gradient(to right,cyan,#30bee2); border-radius: 50%; display: inline-block; margin:3px; margin-left: 5px;"></span><spen style="margin:0 20px; letter-spacing: 10px;">SEARCH OUR COURSES</spen><span style="height:10px; width:10px; background:linear-gradient(to right,cyan,#30bee2); border-radius: 50%; display: inline-block; margin: 3px;"></span>
+      <span style="height:10px; width:10px; background:linear-gradient(to right,cyan,#30bee2); border-radius: 50%; display: inline-block; margin:3px;"></span></div>
+    <h1 class="text-center mb-3 m-3">Our Blogs</h1>
+    <div class="container">
+      <div class="row">
+        {% for post in object_list %}
+
+
+        <article class="media content-section">
+          <div class=card>
+          <img class="img-circle" alt="" src="{{ post.image.url }}">
+          <div class="card-title">
+            
+            <h2><a class="article-title" href="{% url 'blogdetail' post.id %}">{{ post.title }}</a></h2>
+            <p class="article-content">{{ post.body |safe }}</p>
+          </div>
+        </div>
+        </article>
+
+        {% endfor %}
+      </div>
+    </div>
+    
+</div>
+</section>
+{% endblock %}
+

@@ -1,0 +1,31 @@
+{% extends 'base.html'%}
+{% block content %}
+
+
+{% load cart_tag %}
+<section class="container">
+    <div>
+Total Length :: {{request.session.cart|length}}
+Cart Detail:
+<div class="row">
+{% for key,value in request.session.cart.items %}
+<div class="col-md-4">
+<p>{{value.name}}<br> {{value.price}} <br>{{value.quantity}} <br>
+    <img src="{{value.image}}" style="height:300px; width:300px;" alt=""> <br>
+    Total {{ value.price|multiply:value.quantity }}
+</p>
+<a href="{% url 'item_clear' value.product_id %}" class="btn btn-secondary">Remove Item</a>
+</div>
+{% endfor %}
+</div>
+</div>
+<a href="{% url 'cart_clear' %}" class="btn btn-secondary">Clear Cart</a>
+{% if user.is_authenticated %}
+<a href="{% url 'payment' %}" class="btn btn-secondary">Checkout</a>
+{%else%}
+<a href="{% url 'register' %}" class="btn btn-secondary">Checkout</a>
+{%endif%}
+</section>
+
+
+{% endblock %}

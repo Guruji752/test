@@ -1,0 +1,90 @@
+{% load static %}
+<section>
+    <nav class="fixed-bottom navbar-light bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <a href="https://mail.google.com/mail/u/0/#inbox?compose=new"><i class="fas fa-envelope-open"></i> info@ephysioneeds.com</a>
+
+                </div>
+                <div class="col-md-4">
+                    <a href=""><i class="fas fa-phone my-2" ></i>Call Us: (+91) 8800220066</a>
+
+                </div>
+                <div class="col-md-4">
+                    <a href=""><i>(+91) 8800220066</i></a>
+
+                </div>
+            </div>
+
+        </div>
+      </nav>
+</section>
+
+<section style="background: whitesmoke;" style="text-decoration: none;">
+    <div class="container-fluid">
+    <div class="row mx-5">
+        <div class="col-md-3">
+            <div class="my-5">
+                <p class="py-5">We take our mission of increasing global access to quality education seriously</p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="my-5">
+                <p style="font-size: 20px;">Useful Links</p>
+                <ul style=" list-style-type:square; text-decoration: none; font-size: 15px;">
+                    <a href="{%url 'aboutus'%}" style="text-decoration: none;"><li>About us</li></a>
+                    <a href="{% url 'coursehome'%}" style="text-decoration: none;"><li>All Courses</li></a>
+                    <a href="{%url 'privacy_policy'%}" style="text-decoration: none;"><li>Privacy Policy</li></a>
+                    <a href="{% url 'aboutus'%}" style="text-decoration: none;"><li>Team</li></a>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="my-5">
+                <div>
+                    <p style="font-size:20px;">Account Info</p>
+                    <ul style=" list-style-type:square; font-size: 15px;">
+                        <a href="{% url 'contactus'%}" style="text-decoration: none;"><li>CONTACT US</li></a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="my-5">
+                <p style="font-size:20px;">Photo Gallery</p>
+            </div>
+        </div>
+    </div>
+    <div class="row container">
+        <div class="col-md-4 text-center">
+            <h4>
+                Connect with Us
+            </h4>
+            <div class="text-center"> 
+                <div class="social">
+                    <a href="#">
+                      <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="#">
+                      <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="#">
+                      <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#">
+                      <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#">
+                      <i class="fab fa-pinterest"></i>
+                    </a>
+                  </div>
+            </div>
+        </div>
+        <div class="col-md-8 py-2">
+            <h5>Subscribe Newsletter</h5>
+            <input type="text" placeholder="" style="width:70%; height:40px; border:gray 3px solid;" class="my-2"><span><a href="" class="btn" style="height: 45px; background: #60fdf6;"><b>Subscribe Us</b></a></span>
+        </div>
+    </div>
+    </div>
+</section>

@@ -1,0 +1,76 @@
+{% extends 'base.html'%}
+{% block content%}
+<section>
+<div class="container my-5" style="border:black 2px solid;">
+          <div id="paypal-button-container" >
+
+          <!-- Include the PayPal JavaScript SDK -->
+          <script src="https://www.paypal.com/sdk/js?client-id=AfC3yQOs0l7FsdzMAcdg4qkLFsBhZb8mmLEzJS35JGAbWKrhMQRmWYhObMQu4u0cUk6mxT5qssmLoB7j&currency=USD&disable-funding=credit"></script>
+      
+          <script>
+              // Render the PayPal button into #paypal-button-container
+              paypal.Buttons({
+      
+                  // Set up the transaction
+                  createOrder: function(data, actions) {
+                      return actions.order.create({
+                          purchase_units: [{
+                              amount: {
+                                  value: '0.01'
+                              }
+                          }]
+                      });
+                  },
+      
+                  // Finalize the transaction
+                  onApprove: function(data, actions) {
+                      return actions.order.capture().then(function(details) {
+                          // Show a success message to the buyer
+                          alert('Transaction completed by ' + details.payer.name.given_name + '!');
+                      });
+                  }
+      
+      
+              }).render('#paypal-button-container');
+          </script>
+</div>
+<hr>
+          <div class="">
+            <h3>
+              For Direct Transfer
+            </h3>
+            <p>
+              Bank Name:HDFC<br>
+              Account Number: 50200048366510</br>
+              IFSC: hdfc0002445</br>
+              Branch Name: NIT Faridabad</br>            </p>
+            <br>
+            For confirmation of your payment please Click on the Button<br><br>
+            <a href="{%url 'upload_detail'%}" class="btn btn-secondary">Click Here</a>
+          </div>
+          <hr>
+          <h6>For Internet Banking Users</h6>
+    <div class="btn-group my-3">
+      <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Select an option
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="https://www.onlinesbi.com/" target="_blank">State Bank Of India</a>
+        <a class="dropdown-item" href="https://v1.hdfcbank.com/assets/popuppages/netbanking.htm" target="_blank">HDFC</a>
+        <a class="dropdown-item" href="https://www.icicibank.com/Personal-Banking/insta-banking/internet-banking/index.page" target="_blank">ICICI</a>
+        <a class="dropdown-item" href="https://www.kotak.com/j1001mp/netapp/MainPage.jsp" target="_blank">Kotak</a>
+      </div>
+    </div>
+    <div>
+      <div class="radio">
+        <label><input type="radio" name="optradio" checked>Credit Card</label>
+      </div>
+      {% comment %}
+      <div class="radio">
+        <label><input type="radio" name="optradio">Debit Card</label>
+      </div>
+      {% endcomment%}
+    </div>
+    </div>
+  </section>
+  {% endblock %}

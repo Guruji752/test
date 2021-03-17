@@ -1,0 +1,71 @@
+{% load static %}
+<section>
+<nav class="navbar navbar-expand-lg sticky-top" style="background:black;">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="{% static '/img/logo.png' %}" class="logo" alt="">
+    </a>
+    <div class="navbar-collapse" id="navbarNavAltMarkup">
+      <ul class="navbar-nav mx-2 ml-auto" >
+        <li {% if ' ' in request.path %}
+        class="nav-item active mr-3"
+        {% else %}
+        class="nav-item  mr-3"
+        {% endif %}
+        >
+          <a class="nav-link" href="{% url 'home' %}" style="color:cyan; font-family:Verdana, Geneva, Tahoma, sans-serif; font-size: 14px;"><b>Home</b></a>
+        </li>
+        <li {% if 'aboutus' in request.path %}
+        class="nav-item active mr-3"
+        {% else %}
+        class="nav-item  mr-3"
+        {% endif %}>
+          <a class="nav-link" href="{% url 'aboutus' %}" style="color:cyan; font-family:Verdana, Geneva, Tahoma, sans-serif; font-size: 14px;"><b>About</b></a>
+        </li>
+        <li {% if 'courses' in request.path %}
+        class="nav-item active mr-3"
+        {% else %}
+        class="nav-item  mr-3"
+        {% endif %}
+        >
+          <a class="nav-link" href="{% url 'coursehome' %}" style="color:cyan; font-family:Verdana, Geneva, Tahoma, sans-serif; font-size: 14px;"><b>Courses</b></a>
+        </li>
+        <div class="nav-item dropdown my-2 mr-3">
+          <a href="" class=" dropdown" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:cyan; font-family:Verdana, Geneva, Tahoma, sans-serif; font-size: 14px;">
+            <b>Opportunities</b>
+          </a>
+          <li>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="{% url 'Writing'%}">Writing</a>
+            <a class="dropdown-item" href="{% url 'Reaserch'%}">Reaserch</a>
+            <a class="dropdown-item" href="{% url 'Translation'%}">Translation</a>
+            <a class="dropdown-item" href="{% url 'hcvl'%}">Health Care- Video Lesson</a>
+            <a class="dropdown-item" href="{% url 'hcoc'%}">Health Care- Online Consultant</a>
+            <a class="dropdown-item" href="{% url 'hcls'%}">Health Care- Live Session</a>
+            <a class="dropdown-item" href="{% url 'homecare'%}">Home Care</a>
+          </div> 
+        </div>
+      </li>
+
+
+        <li {% if 'contactus' in request.path %}
+        class="nav-item active mr-3"
+        {% else %}
+        class="nav-item  mr-3"
+        {% endif %}
+        >
+          <a class="nav-link" href="{% url 'contactus' %}" style="color:cyan; font-family:Verdana, Geneva, Tahoma, sans-serif; font-size: 14px;"><b>Contact Us</b></a>
+        </li>
+        <li {% if 'courses' in request.path %}
+        class="nav-item active mr-3"
+        {% else %}
+        class="nav-item  mr-3"
+        {% endif %}
+        >
+          <a class="nav-link" href="{% url 'bloghome' %}" style="color:cyan; font-family:Verdana, Geneva, Tahoma, sans-serif; font-size: 14px;"><b>Blog</b></a>
+      </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</section>
